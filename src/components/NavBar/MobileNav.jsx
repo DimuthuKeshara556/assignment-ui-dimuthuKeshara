@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const MobileNav = () => {
   // State for menu toggle, dropdowns, and mobile menu visibility
   const [isMoreDropdownOpen, setIsMoreDropdownOpen] = useState(false);
   const [isQuickLinksDropdownOpen, setIsQuickLinksDropdownOpen] =
     useState(false);
+    
 
-    // Define a custom hook to handle the menu toggle state
-const useMenuToggle = () => {
-  // State for menu toggle
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Define a custom hook to handle the menu toggle state
+  const useMenuToggle = () => {
+    // State for menu toggle
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Handle menu toggle
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    // Handle menu toggle
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+    return [isMenuOpen, toggleMenu];
   };
 
-  // Return the state and the handler
-  return [isMenuOpen, toggleMenu];
-};
-  
   // Handle "More" dropdown toggle
   const toggleMoreDropdown = () => {
     setIsMoreDropdownOpen(!isMoreDropdownOpen);
@@ -55,15 +54,16 @@ const useMenuToggle = () => {
     { text: "Support", href: "/" },
   ];
 
+
   return (
     <div className="w-full h-[100vh]  bg-gray-700 flex flex-col items-center  pt-4 font-Cinzel lg:hidden text-xl ">
       <ul className=" justify-around">
-      <MainMenuItem text="Membership" to="/membership"/>
-      <MainMenuItem text="World Map" to="/worldmap" />
-      <MainMenuItem text="High Score" to="/highscore" />
-      <MainMenuItem text="Forums" to="/forums" />
-      <MainMenuItem text="News" to="/news" />
-    
+        <MainMenuItem text="Membership" to="/membership"/>
+        <MainMenuItem text="World Map" to="/worldmap" />
+        <MainMenuItem text="High Score" to="/highscore" />
+        <MainMenuItem text="Forums" to="/forums" />
+        <MainMenuItem text="News" to="/news" />
+
         <li className="group">
           <button
             className="text-yellow-500 hover:text-white"
@@ -124,7 +124,11 @@ export default MobileNav;
 const MainMenuItem = ({ text, to, onClick }) => {
   return (
     <li>
-      <Link className="text-yellow-500 hover:text-white" to={to} onClick={onClick}>
+      <Link
+        className="text-yellow-500 hover:text-white"
+        to={to}
+        onClick={onClick}
+      >
         {text}
       </Link>
     </li>

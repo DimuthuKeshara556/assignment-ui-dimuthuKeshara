@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar/NavBar"
 
 const MainLayout = () => {
   return (
-    <div className="w-full">
+    <div className="w-full ">
         <NavBar/>
         <Outlet />
         <Footer/>

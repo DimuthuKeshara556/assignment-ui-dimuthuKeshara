@@ -24,29 +24,22 @@ const items = [
 
 // Define a custom hook to handle the menu toggle state
 const useMenuToggle = () => {
-  // State for menu toggle
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Handle menu toggle
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // Return the state and the handler
   return [isMenuOpen, toggleMenu];
 };
 
 // Define a reusable button component
 const Button = ({ label, to }) => {
-  // Use the useNavigate hook to navigate to the given path
+
   const navigate = useNavigate();
 
   // Define a handler function to call the navigate function
   const handleClick = () => {
     navigate(to);
   };
-
-  // Return the button element with the given label and handler
   return (
     <button
       className="text-white hover:border-b-2 hover:border-yellow-500 hover:text-yellow-500 font-semibold"
@@ -75,6 +68,12 @@ const NavigationList = ({ items }) => (
 const NavBar = () => {
   // Use the custom hook to get the menu toggle state and handler
   const [isMenuOpen, toggleMenu] = useMenuToggle();
+  const navigate = useNavigate();
+
+  const handleImageClick = () => {
+    // Use the navigate function to navigate to the home page
+    navigate('/');
+  };
 
 
   return (
@@ -105,7 +104,7 @@ const NavBar = () => {
         <li className="group">
           <Button label="High Score" to="/highscore" />
         </li>
-        <img className="absolute mt-12" src={logo} alt="logo" />
+        <img className="absolute mt-12 cursor-pointer" src={logo} alt="logo" onClick={handleImageClick} />
         <li className="group">
           <Button label="Forums" to="/forums" />
         </li>
