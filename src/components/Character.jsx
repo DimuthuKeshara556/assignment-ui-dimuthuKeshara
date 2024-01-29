@@ -15,7 +15,7 @@ const Character = () => {
           disableOnInteraction: false,
         }}
         pagination={{
-          clickable: true,
+          clickable: false,
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}

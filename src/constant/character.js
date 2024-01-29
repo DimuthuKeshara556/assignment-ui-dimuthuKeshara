@@ -76,12 +76,5 @@ export const character=[
         name: "Theatre of Blood's Guardians: ",
         description:"Seven monstrous creatures with unique appearances and deadly abilities, guarding the entrance to the theatre.",
       },
-    {
-        id: 12,
-        image: "https://lh3.googleusercontent.com/bip/AAewDPzhNeVL6MtgsvHzsN1CEYu6CRpHvgFnT159_4Aq-Mg3V1ADrZma8_94EQ6JFNtL11ttuNGXLO8TKCeA46pYXLrowhIobbcOld444OS-MHPeSxaExbc2FY7oagOsLdkmrIsKHbV8X515EjXgaQxfjFvcheN1qYrJaJk=w250-h200-p",
-        category:"Legendary Beasts:",
-        name: "Jad:",
-        description:"A fearsome fire demon with glowing molten skin and wings, erupting from a volcanic chamber. ",
-      },
-    
+   
 ]
